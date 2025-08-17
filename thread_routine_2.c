@@ -6,7 +6,7 @@
 /*   By: jait-chd <jait-chd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:43:44 by jait-chd          #+#    #+#             */
-/*   Updated: 2025/08/08 16:06:28 by jait-chd         ###   ########.fr       */
+/*   Updated: 2025/08/12 01:00:56 by jait-chd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void	*philo_routine(void *ptr)
 	t_philo *philo;
 
 	philo = (t_philo *)ptr;
-	//geter
+	/// kkkkkkkkkkkkkkkkkkkk
 	if (philo->id % 2 == 0 || philo->id == philo->access->n)
 		usleep(1000);
 	if (philo->access->n == 1)
 	{
 		print_status(philo, "has taken a fork");
 		usleep(philo->access->time_t_die * 1000);
-		return (NULL);
+    	return (NULL);
 	}
 	while (!check_death(philo))
 	{

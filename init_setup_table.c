@@ -6,7 +6,7 @@
 /*   By: jait-chd <jait-chd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 21:40:20 by jait-chd          #+#    #+#             */
-/*   Updated: 2025/08/10 21:46:54 by jait-chd         ###   ########.fr       */
+/*   Updated: 2025/08/11 14:19:15 by jait-chd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int setup_env(t_table *table) {
 
 	i = 0;
 	if(!setup_mutexes(table))
-        return 1;
+        return 0;
 	while(i < table->n) {
 		setup_table(table , table->philos , i);
 		i++;
@@ -59,5 +59,5 @@ int setup_env(t_table *table) {
 	}
 	destroy_mutexes(table);
 	free(table);
-	return 0;
+	return 1;
 }

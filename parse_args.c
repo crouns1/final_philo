@@ -6,11 +6,11 @@
 /*   By: jait-chd <jait-chd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:41:52 by jait-chd          #+#    #+#             */
-/*   Updated: 2025/08/10 20:14:01 by jait-chd         ###   ########.fr       */
+/*   Updated: 2025/08/11 19:49:10 by jait-chd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo_utils.h"
+#include "philo.h"
 
 int	is_valid(int ac, char **av)
 {

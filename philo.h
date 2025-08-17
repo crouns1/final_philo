@@ -6,14 +6,13 @@
 /*   By: jait-chd <jait-chd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:42:16 by jait-chd          #+#    #+#             */
-/*   Updated: 2025/08/10 21:46:25 by jait-chd         ###   ########.fr       */
+/*   Updated: 2025/08/11 19:48:58 by jait-chd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-# include "philo_utils.h"
 # include <pthread.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -50,6 +49,9 @@ typedef struct s_philo
 
 // Argument parsing
 int						is_valid(int ac, char **av);
+
+int	is_valid_number(char *str);
+int	ft_atoi(const char *str);
 
 // Setup
 t_table	*init_shell(int c, char **v);

@@ -6,11 +6,11 @@
 /*   By: jait-chd <jait-chd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:45:08 by jait-chd          #+#    #+#             */
-/*   Updated: 2025/08/08 15:50:22 by jait-chd         ###   ########.fr       */
+/*   Updated: 2025/08/11 19:48:37 by jait-chd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo_utils.h"
+#include "philo.h"
 
 int	is_valid_number(char *str)
 {
