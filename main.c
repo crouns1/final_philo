@@ -22,7 +22,7 @@ int	main(int c, char **v)
 		return 1;
 	}
 	table = init_shell(c ,v);
-	if(!setup_env(table))
+	if(setup_env(table))
 		return 1;
 	return (0);
 }

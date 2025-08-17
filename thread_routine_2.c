@@ -26,6 +26,7 @@ void	*philo_routine(void *ptr)
 	t_philo *philo;
 
 	philo = (t_philo *)ptr;
+	//geter
 	if (philo->id % 2 == 0 || philo->id == philo->access->n)
 		usleep(1000);
 	if (philo->access->n == 1)
