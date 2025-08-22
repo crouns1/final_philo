@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-chd <jait-chd@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: jait-chd <jait-chd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 23:25:18 by jait-chd          #+#    #+#             */
-/*   Updated: 2025/08/22 14:02:12 by jait-chd         ###   ########.fr       */
+/*   Updated: 2025/08/11 14:19:15 by jait-chd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,19 @@ int	main(int c, char **v)
 
 	if (!is_valid(c, v))
 	{
-		printf("Eroor : you should enter a spesific arg\n");
+		printf("Error: you should enter a specific arg\n");
 		return (1);
 	}
-	table = init_env(c, v);
+	table = init_shell(c, v);
 	if (!table)
 		return (1);
 	if (!setup_env(table))
+	{
+		free(table->philos);
+		free(table);
 		return (1);
+	}
+	free(table->philos);
+	free(table);
 	return (0);
 }

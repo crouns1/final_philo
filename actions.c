@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-chd <jait-chd@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: jait-chd <jait-chd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:14:51 by jait-chd          #+#    #+#             */
-/*   Updated: 2025/08/22 13:54:56 by jait-chd         ###   ########.fr       */
+/*   Updated: 2025/08/09 17:44:43 by jait-chd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 void	print_status(t_philo *philo, char *msg)
 {
-	pthread_mutex_lock(&philo->access->print);
+	pthread_mutex_lock(&philo->access->set);
 	if (!philo->access->is_dead)
+	{
+		pthread_mutex_lock(&philo->access->print);
 		printf("%ld %d %s\n", time_stamp_sch() - philo->access->start_time,
 			philo->id, msg);
-	pthread_mutex_unlock(&philo->access->print);
+		pthread_mutex_unlock(&philo->access->print);
+	}
+	pthread_mutex_unlock(&philo->access->set);
 }
 
 int	check_death(t_philo *philo)
