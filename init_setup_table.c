@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   init_setup_table.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-chd <jait-chd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jait-chd <jait-chd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 21:40:20 by jait-chd          #+#    #+#             */
-/*   Updated: 2025/08/11 14:19:15 by jait-chd         ###   ########.fr       */
+/*   Updated: 2025/08/22 14:02:05 by jait-chd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-t_table	*init_shell(int c, char **v)
+t_table	*init_env(int c, char **v)
 {
 	t_table	*shell;
 	t_philo	*philos;
@@ -40,15 +40,16 @@ t_table	*init_shell(int c, char **v)
 	return (shell);
 }
 
-
-int setup_env(t_table *table) {
+int	setup_env(t_table *table)
+{
 	int	i;
 
 	i = 0;
-	if(!setup_mutexes(table))
-        return 0;
-	while(i < table->n) {
-		setup_table(table , table->philos , i);
+	if (!setup_mutexes(table))
+		return (0);
+	while (i < table->n)
+	{
+		setup_table(table, table->philos, i);
 		i++;
 	}
 	if (!create_threads(table, table->philos))
@@ -59,5 +60,5 @@ int setup_env(t_table *table) {
 	}
 	destroy_mutexes(table);
 	free(table);
-	return 1;
+	return (1);
 }

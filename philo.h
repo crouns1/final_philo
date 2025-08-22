@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-chd <jait-chd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jait-chd <jait-chd@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:42:16 by jait-chd          #+#    #+#             */
-/*   Updated: 2025/08/11 19:48:58 by jait-chd         ###   ########.fr       */
+/*   Updated: 2025/08/22 14:02:39 by jait-chd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,13 @@ typedef struct s_philo
 
 // Argument parsing
 int						is_valid(int ac, char **av);
-
-int	is_valid_number(char *str);
-int	ft_atoi(const char *str);
+int						is_valid_number(char *str);
+int						ft_atoi(const char *str);
 
 // Setup
-t_table	*init_shell(int c, char **v);
-int setup_env(t_table *table) ;
-int					setup_mutexes(t_table *args);
+t_table					*init_env(int c, char **v);
+int						setup_env(t_table *table);
+int						setup_mutexes(t_table *args);
 void					destroy_mutexes(t_table *args);
 void					setup_table(t_table *args, t_philo *philos, int i);
 
